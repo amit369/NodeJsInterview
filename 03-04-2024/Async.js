@@ -1,10 +1,20 @@
 
-const doWork = (a,b) => {
-    return new Promise((resolve,reject) => {
-        resolve(a+b);
+const add = (a,b) => {
+    return new Promise( (resolve, reject) => {
+        setTimeout( () => {
+            resolve(a+b)
+        }, 2000)
     })
 }
 
-doWork(10,20).then((result) => {
-    console.log('result ', result);
+const doWork = async () => {
+        const sum = await add(1,95);
+        const sum2= await add(sum,50);
+        const sum3 = await add(sum2,100);
+        return sum3;
+}
+doWork().then( (result) => {
+    console.log('result ',result);
+}).catch( (e) => {
+    console.log('e ', e);
 })
