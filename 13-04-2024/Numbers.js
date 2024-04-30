@@ -11,11 +11,11 @@ function duplicates(arr)
 
 function nonduplicates(arr)
 {
-    let duplicates = arr.filter((item,index) => {
+    let nonduplicates = arr.filter((item,index) => {
               return arr.indexOf(item) === index
     });
 
-    console.log(duplicates);
+    console.log(nonduplicates);
 }
 
 duplicates(arr);
